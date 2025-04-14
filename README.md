@@ -45,7 +45,7 @@ The result is a CLI utility that’s both functional and educational. I learned 
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/password-generator-cli.git
+git clone https://github.com/CanMus04/password-generator-cli.git
 
 # Move into the directory
 cd password-generator-cli
