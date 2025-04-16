@@ -31,7 +31,6 @@ def generate_password(length=12, uppercase=True, numbers=True, special_chars=Tru
         print("Error: No character types selected.")
         return None
     
-    # Generate password by randomly selecting from available characters
     password = ''.join(random.choice(characters) for _ in range(length))
     return password
 
@@ -39,7 +38,7 @@ def password_strength(password):
     """Evaluates the strength of a password"""
     points = 0
     
-    # Evaluate length
+    
     if len(password) >= 12:
         points += 3
     elif len(password) >= 8:
@@ -47,7 +46,6 @@ def password_strength(password):
     elif len(password) >= 6:
         points += 1
     
-    # Evaluate character diversity
     if any(c.isupper() for c in password):
         points += 1
     if any(c.islower() for c in password):
@@ -65,7 +63,6 @@ def password_strength(password):
     else:
         return "Weak"
 
-# Main program
 print("Welcome to the Password Generator!")
 print("This program creates secure passwords according to your preferences.")
 
@@ -79,7 +76,7 @@ while True:
     
     if choice == "1":
         try:
-            # Get password settings
+           
             length = int(input("Password length (recommended: at least 8): "))
             if length < 1:
                 print("Length must be at least 1. Setting to default value 12.")
@@ -89,7 +86,7 @@ while True:
             nums = input("Use numbers? (y/n): ").lower() == 'y'
             special = input("Use special characters? (y/n): ").lower() == 'y'
             
-            # Generate password
+            
             password = generate_password(length, upper, nums, special)
             strength = password_strength(password)
             
